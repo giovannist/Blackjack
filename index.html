@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            font-family: "Comic Sans MS";
+            background-color: black;
+            color: white;
+        }
+
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        button {
+            background-color: black;
+            border-style: solid;
+            border-color: white;
+            padding: 5px;
+            color: white;
+            margin-left: 30px;
+            margin-right: 30px;
+            margin-top: 30px;
+        }
+
+        button:hover {
+            background-color: gray;
+        }
+
+        button:active {
+            background-color: white;
+            color: gray;
+        }
+
+        button:disabled {
+            background-color: red;
+        }
+
+        .stopped-playing {
+            color: gray;
+        }
+    </style>
+</head>
+
+<body>
+    <p class=center> <span id="turn-tracker"></span> turn</p>
+    <p class="center">Computer Hand: <span id="computer-hand-value">X</span></p>
+    <div id="computer-cards" class="container"></div>
+
+    <p class="center">Your Hand: <span id="player-hand-value">X</span></p>
+    <div id="player-cards" class="container">
+    </div>
+
+    <div>
+        <button id="stop">Stop</button>
+        <button id="draw-card">Draw Card</button>
+    </div>
+    <div>
+        <button id="restart-button" class="center">Restart</button>
+    </div>
+    <script src="twenty-one.js"></script>
+</body>
+
+</html>
