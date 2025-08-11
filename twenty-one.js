@@ -9,6 +9,9 @@ const drawCardButton = document.getElementById('draw-card')
 const stopButton = document.getElementById('stop')
 const restartButton = document.getElementById('restart-button')
 
+const playerScoreLabel = document.getElementById('player-score');
+const computerScoreLabel = document.getElementById('computer-score')
+
 let playerNumber = 0;
 let computerNumber = 0;
 
@@ -16,6 +19,8 @@ let gameContinuing = true;
 let playerContinuing = true;
 let computerContinuing = true;
 
+let computerScore = 0;
+let playerScore = 0;
 
 turnTracker.innerHTML = `Player's`
 drawCardButton.onclick = () => {
@@ -133,9 +138,13 @@ function checkGameEnd(num) {
     if (!playerContinuing && !computerContinuing) {
         if (playerNumber > computerNumber) {
             playerHandValue.innerHTML = `${playerNumber}, you win!`
+            playerScore += 1;
+            playerScoreLabel.innerHTML = playerScore;
         }
         else if (playerNumber < computerNumber) {
             playerHandValue.innerHTML = `${playerNumber}, you lose!`
+            computerScore += 1;
+            computerScoreLabel.innerHTML = computerScore
         }
         else {
             playerHandValue.innerHTML = `${playerNumber}, it's a tie!!`
@@ -145,23 +154,29 @@ function checkGameEnd(num) {
         playerHandValue.innerHTML = `${num}, You win!`
         computerContinuing = false;
         gameContinuing = false;
+        playerScore += 1;
+        playerScoreLabel.innerHTML = playerScore;
     }
     else if (playerNumber > 21) {
         playerHandValue.innerHTML = `${num}, You Lose!!`
         gameContinuing = false;
         computerContinuing = false;
-
+        computerScore += 1;
+        computerScoreLabel.innerHTML = computerScore
     }
     else if (computerNumber == 21) {
         computerHandValue.innerHTML = `${num}, Computer wins!`
         gameContinuing = false;
         computerContinuing = false;
-
+        computerScore += 1;
+        computerScoreLabel.innerHTML = computerScore
     }
     else if (computerNumber > 21) {
         playerHandValue.innerHTML = `${playerNumber}, Computer went over 21, You Win!!`
         gameContinuing = false;
         computerContinuing = false;
+        playerScore += 1;
+        playerScoreLabel.innerHTML = playerScore;
 
     }
     if (!gameContinuing || !playerContinuing && !computerContinuing) {

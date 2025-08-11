@@ -56,11 +56,17 @@
 </head>
 
 <body>
-    <p class=center> <span id="turn-tracker"></span> turn</p>
-    <p class="center">Computer Hand: <span id="computer-hand-value">X</span></p>
+    <div>
+        <p>Player <span id="player-score">0</span>&nbsp;:&nbsp;</p>
+        <p><span id="computer-score">0</span> Computer</p>
+    </div>
+
+
+    <p class=center> <span id="turn-tracker"></span>&nbspturn</p>
+    <p class="center">Computer Hand:&nbsp<span id="computer-hand-value">0</span></p>
     <div id="computer-cards" class="container"></div>
 
-    <p class="center">Your Hand: <span id="player-hand-value">X</span></p>
+    <p class="center">Your Hand:&nbsp<span id="player-hand-value">0</span></p>
     <div id="player-cards" class="container">
     </div>
 
@@ -68,6 +74,7 @@
         <button id="stop">Stop</button>
         <button id="draw-card">Draw Card</button>
     </div>
+
     <div>
         <button id="restart-button" class="center">Restart</button>
     </div>
